@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Traversal Example</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body class="bg-light">
+
+    <div class="container mt-5">
+
+        <h1 class="text-center mb-4">
+            jQuery Traversal Methods
+        </h1>
+
+        <div id="mainBox"
+            class="border border-dark p-4 bg-white">
+
+            <h3>Parent Div</h3>
+
+            <div class="child border p-3 m-2 bg-info text-white">
+
+                Child 1
+
+                <p class="inside">
+                    Paragraph inside Child 1
+                </p>
+
+            </div>
+
+            <div class="child border p-3 m-2 bg-success text-white">
+
+                Child 2
+
+            </div>
+
+            <div class="child border p-3 m-2 bg-warning">
+
+                Child 3
+
+            </div>
+
+        </div>
+        <div class="mt-4 text-center">
+
+            <button class="btn btn-primary m-2"
+                id="parentBtn">
+
+                parent()
+            </button>
+
+            <button class="btn btn-success m-2"
+                id="childrenBtn">
+
+                children()
+            </button>
+
+            <button class="btn btn-danger m-2"
+                id="findBtn">
+
+                find()
+            </button>
+
+            <button class="btn btn-dark m-2"
+                id="siblingsBtn">
+
+                siblings()
+            </button>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        $("#parentBtn").click(function () {
+
+            $(".inside")
+                .parent()
+                .css("background-color", "purple");
+        });
+
+        $("#childrenBtn").click(function () {
+
+            $("#mainBox")
+                .children()
+                .css("border", "4px solid red");
+        });
+
+        $("#findBtn").click(function () {
+
+            $("#mainBox")
+                .find("p")
+                .css({
+                    "color": "blue",
+                    "font-size": "25px"
+                });
+        });
+
+        $("#siblingsBtn").click(function () {
+
+            $(".child:first")
+                .siblings()
+                .css("background-color", "orange");
+        });
+
+    </script>
+
+</body>
+
+</html>
